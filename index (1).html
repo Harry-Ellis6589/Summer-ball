@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Bethan: A Magical Invitation</title>
+    <style>
+        /* Cosmic Color Palette */
+        :root {
+            --stardust: #FFF5EE;
+            --moonlight: #E6E6FA;
+            --twilight: #6A5ACD;
+            --rose-quartz: #F8C8DC;
+            --sunset: #FF9BB3;
+            --golden-hour: #FFD700;
+            --deep-space: #191970;
+            --love-letter: #8B0000;
+        }
+
+        /* Universal Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Celestial Body */
+        body {
+            font-family: 'Cormorant Garamond', 'Apple Garamond', 'Baskerville', serif;
+            background-color: var(--deep-space);
+            color: var(--stardust);
+            line-height: 1.8;
+            overflow-x: hidden;
+            perspective: 1000px;
+            scroll-behavior: smooth;
+        }
+
+        /* Cosmic Background Canvas */
+        .universe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+
+        /* Animated Stars */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, 
+                rgba(255,255,255,0.1) 0%, 
+                rgba(255,255,255,0) 70%);
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+            opacity: 0;
+            filter: blur(0.5px);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: var(--opacity); transform: scale(1); }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(to right, 
+                rgba(255,255,255,0) 0%, 
+                white 50%, 
+                rgba(255,255,255,0) 100%);
+            border-radius: 50%;
+            animation: shoot linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes shoot {
+            0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translate(1000px, 300px) scale(1.5); opacity: 0; }
+        }
+
+        /* Aurora Borealis Effect */
+        .aurora {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 30% 30%, 
+                    rgba(138, 43, 226, 0.15) 0%, 
+                    transparent 40%),
+                radial-gradient(circle at 70% 70%, 
+                    rgba(0, 191, 255, 0.15) 0%, 
+                    transparent 40%),
+                radial-gradient(circle at 50% 20%, 
+                    rgba(50, 205, 50, 0.15) 0%, 
+                    transparent 40%);
+            animation: aurora-flow 60s infinite alternate ease-in-out;
+            z-index: -9;
+            opacity: 0.7;
+        }
+
+        @keyframes aurora-flow {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(2deg) scale(1.05); }
+            50% { transform: rotate(-1deg) scale(0.95); }
+            75% { transform: rotate(3deg) scale(1.03); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        /* Floating Love Notes */
+        .love-note {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF9BB3"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            animation: float-note linear infinite;
+            z-index: -8;
+        }
+
+        @keyframes float-note {
+            0% { transform: translateY(0) rotate(0deg) scale(0.3); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg) scale(1); opacity: 0; }
+        }
+
+        /* Main Container - Celestial Scroll */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enchanted Header */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            padding-top: 3rem;
+        }
+
+        .title-wrapper {
+            display: inline-block;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: var(--golden-hour);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            position: relative;
+            display: inline-block;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px var(--golden-hour); }
+            to { text-shadow: 0 0 20px var(--golden-hour), 0 0 30px var(--sunset); }
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                var(--rose-quartz) 20%, 
+                var(--twilight) 50%, 
+                var(--rose-quartz) 80%, 
+                transparent 100%);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--moonlight);
+            margin-top: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Constellations */
+        .nav-constellation {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .star-link {
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 0 15px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px white;
+        }
+
+        .star-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            width: 15px;
+            height: 1px;
+            background-color: rgba(255,255,255,0.3);
+            transform-origin: right center;
+        }
+
+        .star-link:hover {
+            transform: scale(1.5);
+            background-color: var(--golden-hour);
+            box-shadow: 0 0 15px var(--golden-hour);
+        }
+
+        .star-link.active {
+            background-color: var(--sunset);
+            box-shadow: 0 0 15px var(--sunset);
+        }
+
+        /* Celestial Sections */
+        .celestial-section {
+            background: rgba(25, 25, 112, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 
+                0 0 20px rgba(230, 230, 250, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .celestial-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, 
+                rgba(255, 155, 179, 0.1) 0%, 
+                transparent 70%);
+            animation: pulse 8s infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.1; }
+            100% { transform: scale(1.2); opacity: 0.3; }
+        }
+
+        .celestial-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 0 30px rgba(230, 230, 250, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--moonlight);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 5px rgba(230, 230, 250, 0.5);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                var(--twilight), 
+                var(--rose-quartz), 
+                var(--twilight));
+        }
+
+        /* Invitation Scroll */
+        .invitation-scroll {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23E6E6FA" stroke-width="0.5" stroke-dasharray="5,5" /></svg>');
+            padding: 3rem;
+            border-radius: 5px;
+            position: relative;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .invitation-scroll::before, 
+        .invitation-scroll::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, 
+                rgba(25, 25, 112, 0.8), 
+                transparent);
+            z-index: 2;
+        }
+
+        .invitation-scroll::before {
+            top: 0;
+        }
+
+        .invitation-scroll::after {
+            bottom: 0;
+            background: linear-gradient(to top, 
+                rgba(25, 25, 112, 0.8), 
+                transparent);
+        }
+
+        .invitation-text {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .invitation-text.highlight {
+            color: var(--golden-hour);
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Wax Seal Button */
+        .wax-seal {
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF0000"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><text x="12" y="16" text-anchor="middle" font-family="Arial" font-size="8" fill="white">B+E</text></svg>') no-repeat center;
+            background-size: contain;
+            margin: 2rem auto;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+            position: relative;
+        }
+
+        .wax-seal:hover {
+            transform: scale(1.1) rotate(15deg);
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
+        }
+
+        .wax-seal::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, 
+                rgba(255, 255, 255, 0.8) 0%, 
+                transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .wax-seal:hover::after {
+            opacity: 0.3;
+        }
+
+        /* Interactive Response Buttons */
+        .response-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .response-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .response-btn.yes {
+            background: linear-gradient(45deg, 
+                var(--twilight), 
+                var(--rose-quartz));
+        }
+
+        .response-btn.no {
+            background: transparent;
+            border: 2px solid var(--rose-quartz);
+            color: var(--rose-quartz);
+        }
+
+        .response-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, 
+                rgba(255, 255, 255, 0.3) 0%, 
+                transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+        }
+
+        .response-btn:hover::before {
+            transform: scale(1);
+        }
+
+        .response-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .response-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Memory Carousel */
+        .memory-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 
+                0 0 30px rgba(255, 155, 179, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .memory-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .memory-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .memory-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.8), 
+                transparent);
+            color: white;
+            text-align: center;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--moonlight);
+            margin: 0 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .carousel-dot.active {
+            background: var(--sunset);
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(25, 25, 112, 0.5);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 155, 179, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev {
+            left: 20px;
+        }
+
+        .carousel-btn.next {
+            right: 20px;
+        }
+
+        /* Poetry Collection */
+        .poetry-collection {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .poem-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .poem-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(255, 155, 179, 0.2);
+        }
+
+        .poem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                var(--rose-quartz), 
+                var(--twilight));
+        }
+
+        .poem-title {
+            font-size: 1.5rem;
+            color: var(--golden-hour);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .poem-content {
+            font-style: italic;
+            line-height: 2;
+            color: var(--moonlight);
+        }
+
+        .poem-line {
+            display: block;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .poem-line::before {
+            content: '❀';
+            position: absolute;
+            left: 0;
+            color: var(--rose-quartz);
+            font-size: 0.8rem;
+        }
+
+        .poem-line.highlight {
+            color: var(--golden-hour);
+            font-weight: 500;
+        }
+
+        /* Interactive Elements */
+        .interactive-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-element:hover {
+            transform: scale(1.05);
+        }
+
+        /* Confetti Celebration */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--golden-hour);
+            opacity: 0;
+            z-index: 100;
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        /* Footer - Shooting Star */
+        footer {
+            margin-top: 5rem;
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                white, 
+                transparent);
+            transform: translateX(-50%);
+        }
+
+        footer::after {
+            content: '✦';
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--golden-hour);
+            font-size: 2rem;
+            animation: pulse 2s infinite alternate;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .celestial-section {
+                padding: 2rem;
+            }
+            
+            .memory-image {
+                height: 350px;
+            }
+            
+            .poetry-collection {
+                grid-template-columns: 1fr;
+            }
+            
+            .response-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Special Animations */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(25, 25, 112, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .audio-player:hover {
+            transform: scale(1.1);
+            background: rgba(255, 155, 179, 0.7);
+        }
+
+        .audio-player i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Hidden Poem Reveal */
+        .hidden-poem {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .hidden-poem.revealed {
+            max-height: 1000px;
+        }
+
+        /* 3D Floating Elements */
+        .floating-3d {
+            transform-style: preserve-3d;
+            animation: float-3d 10s infinite ease-in-out;
+        }
+
+        @keyframes float-3d {
+            0% { transform: translateY(0) rotateX(0) rotateY(0); }
+            50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+            100% { transform: translateY(0) rotateX(0) rotateY(0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(25, 25, 112, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--rose-quartz);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--sunset);
+        }
+
+        /* Password Protection Modal */
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .password-box {
+            background: rgba(25, 25, 112, 0.9);
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid var(--rose-quartz);
+            box-shadow: 0 0 30px rgba(255, 155, 179, 0.5);
+        }
+
+        .password-input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--rose-quartz);
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            width: 100%;
+            text-align: center;
+            outline: none;
+        }
+
+        .password-hint {
+            font-size: 0.9rem;
+            color: var(--moonlight);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* AR Overlay */
+        .ar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+        }
+
+        .ar-container {
+            width: 90%;
+            height: 90%;
+            max-width: 800px;
+            background: black;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .close-ar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* Floating Cursor Hearts */
+        .cursor-heart {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF9BB3"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 999;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        /* Micro-interactions */
+        .micro-interaction {
+            transition: all 0.3s ease;
+        }
+
+        .micro-interaction:hover {
+            transform: scale(1.02);
+        }
+
+        /* Particle Effects */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, var(--rose-quartz), var(--golden-hour));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* 3D Flip Cards */
+        .flip-card {
+            perspective: 1000px;
+            width: 300px;
+            height: 400px;
+            margin: 1rem;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Floating Islands */
+        .floating-island {
+            animation: float-island 8s infinite ease-in-out;
+        }
+
+        @keyframes float-island {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        /* Sparkle Effects */
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: sparkle 1s infinite;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 155, 179, 0.3);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;
+            transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+        }
+
+        .custom-cursor.active {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 215, 0, 0.2);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cosmic Background -->
+    <div class="universe" id="universe">
+        <div class="stars"></div>
+        <div class="aurora"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Password Protection (Initial Load) -->
+    <div class="password-modal" id="passwordModal">
+        <div class="password-box">
+            <h2 class="gradient-text">Enter the Secret Code</h2>
+            <p>To unlock this magical invitation, enter the name of our first date location</p>
+            <input type="text" class="password-input" id="passwordInput" placeholder="Where did we first meet?">
+            <button class="btn" id="unlockBtn">Unlock Magic</button>
+            <p class="password-hint">Hint: It's where we shared our first laugh together</p>
+        </div>
+    </div>
+
+    <!-- AR Overlay (Hidden Initially) -->
+    <div class="ar-overlay" id="arOverlay">
+        <div class="ar-container" id="arContainer">
+            <button class="close-ar" id="closeAr">✕</button>
+            <!-- AR content would go here -->
+            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:white;">
+                <p>Point your camera at a flat surface to see our magical moment appear!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="mainContent" style="display:none;">
+        <!-- Audio Player -->
+        <div class="audio-player" id="audioPlayer">
+            <i class="fas fa-music"></i>
+            <audio id="bgMusic" loop>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="title-wrapper floating-3d">
+                <h1>For Bethan</h1>
+                <p class="subtitle">An invitation to dance among the stars</p>
+            </div>
+            
+            <div class="nav-constellation">
+                <div class="star-link active" data-section="invitation"></div>
+                <div class="star-link" data-section="memories"></div>
+                <div class="star-link" data-section="poetry"></div>
+                <div class="star-link" data-section="rsvp"></div>
+            </div>
+        </header>
+
+        <!-- Summer Ball Invitation -->
+        <section id="invitation" class="celestial-section">
+            <h2 class="section-title">My Dearest Bethan</h2>
+            
+            <div class="invitation-scroll">
+                <p class="invitation-text">When I imagine the perfect summer evening,</p>
+                <p class="invitation-text">I see golden light filtering through the trees,</p>
+                <p class="invitation-text">soft music floating on the warm breeze,</p>
+                <p class="invitation-text highlight">and you by my side.</p>
+                
+                <p class="invitation-text">The summer ball approaches,</p>
+                <p class="invitation-text">but no dance floor could compare</p>
+                <p class="invitation-text highlight">to the way my heart leaps</p>
+                <p class="invitation-text">when you enter a room.</p>
+                
+                <div class="wax-seal interactive-element" id="waxSeal"></div>
+                
+                <div id="formalInvitation" class="hidden">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--golden-hour);">Will You Be My Date?</h3>
+                    <p style="text-align: center; font-style: italic; margin-bottom: 2rem; color: var(--moonlight);">
+                        To the summer ball and every dance thereafter
+                    </p>
+                    
+                    <div class="response-buttons">
+                        <button class="btn response-btn yes" id="yesBtn">Yes, Absolutely!</button>
+                        <button class="btn response-btn no" id="noBtn">Maybe...</button>
+                    </div>
+                </div>
+                
+                <div id="response" class="hidden" style="text-align: center;">
+                    <div style="font-size: 5rem; margin: 1rem 0; color: var(--golden-hour);">💫</div>
+                    <h2 style="margin-bottom: 1rem; color: var(--golden-hour);">My Heart Soars!</h2>
+                    <p>I'll be counting the moments until we dance together.</p>
+                    <p>Get ready for the most magical night of the summer.</p>
+                    
+                    <button class="btn" id="arButton" style="margin-top: 2rem;">
+                        <i class="fas fa-camera" style="margin-right: 8px;"></i> See Our Magic Moment
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Carousel -->
+        <section id="memories" class="celestial-section">
+            <h2 class="section-title">Our Stellar Moments</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--moonlight);">A constellation of memories that light up my life</p>
+            
+            <div class="memory-carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Replace with your actual photos -->
+                    <div class="memory-slide">
+                        <img src="https://source.unsplash.com/random/800x600/?couple,beach,sunset" alt="Beach Sunset" class="memory-image">
+                        <div class="memory-caption">
+                            <h3>Sunset Serenade</h3>
+                            <p>That evening when time stood still</p>
+                        </div>
+                    </div>
+                    <div class="memory-slide">
+                        <img src="https://source.unsplash.com/random/800x600/?couple,laughing,cafe" alt="Coffee Date" class="memory-image">
+                        <div class="memory-caption">
+                            <h3>Coffee & Confessions</h3>
+                            <p>Where your laugh became my favorite sound</p>
+                        </div>
+                    </div>
+                    <div class="memory-slide">
+                        <img src="https://source.unsplash.com/random/800x600/?couple,hiking,mountains" alt="Mountain Adventure" class="memory-image">
+                        <div class="memory-caption">
+                            <h3>Peak Happiness</h3>
+                            <p>Climbing heights together</p>
+                        </div>
+                    </div>
+                    <div class="memory-slide">
+                        <img src="https://source.unsplash.com/random/800x600/?couple,dancing,party" alt="Dancing" class="memory-image">
+                        <div class="memory-caption">
+                            <h3>Rhythm of Us</h3>
+                            <p>Moving in perfect sync</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn prev" id="prevBtn">❮</button>
+                <button class="carousel-btn next" id="nextBtn">❯</button>
+                
+                <div class="carousel-nav" id="carouselNav"></div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p class="invitation-text">Every moment with you becomes</p>
+                <p class="invitation-text highlight">my new favorite memory</p>
+            </div>
+        </section>
+
+        <!-- Poetry Collection -->
+        <section id="poetry" class="celestial-section">
+            <h2 class="section-title">Constellations of My Heart</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--moonlight);">25 ways the universe whispers your name</p>
+            
+            <div class="poetry-collection">
+                <!-- Poem 1 -->
+                <div class="poem-card interactive-element">
+                    <h3 class="poem-title">Your Eyes</h3>
+                    <div class="poem-content">
+                        <span class="poem-line">Your eyes hold galaxies I'll never map,</span>
+                        <span class="poem-line">Constellations that guide me home.</span>
+                        <span class="poem-line highlight">In their depths I find my compass,</span>
+                        <span class="poem-line">And in their light, I'm never alone.</span>
+                    </div>
+                </div>
+                
+                <!-- Poem 2 -->
+                <div class="poem-card interactive-element">
+                    <h3 class="poem-title">Morning Light</h3>
+                    <div class="poem-content">
+                        <span class="poem-line">Dawn breaks differently since you,</span>
+                        <span class="poem-line">The sun competes with your glow.</span>
+                        <span class="poem-line highlight">I wake to find the world brighter,</span>
+                        <span class="poem-line">Simply because I know</span>
+                        <span class="poem-line">That somewhere in this waking world,</span>
+                        <span class="poem-line">Your eyes are opening too.</span>
+                    </div>
+                </div>
+                
+                <!-- Poem 3 -->
+                <div class="poem-card interactive-element">
+                    <h3 class="poem-title">The Way You Move</h3>
+                    <div class="poem-content">
+                        <span class="poem-line">There's poetry in your footsteps,</span>
+                        <span class="poem-line highlight">Music in your sway,</span>
+                        <span class="poem-line">The universe pauses, breathless,</span>
+                        <span class="poem-line">When you go your way.</span>
+                    </div>
+                </div>
+                
+                <!-- Poem 4 -->
+                <div class="poem-card interactive-element">
+                    <h3 class="poem-title">Your Laughter</h3>
+                    <div class="poem-content">
+                        <span class="poem-line">I'd trade every song ever sung,</span>
+                        <span class="poem-line">Every poem ever penned,</span>
+                        <span class="poem-line highlight">For the privilege of hearing</span>
+                        <span class="poem-line">Your laughter again and again.</span>
+                    </div>
+                </div>
+                
+                <!-- Poem 5 -->
+                <div class="poem-card interactive-element">
+                    <h3 class="poem-title">Quiet Moments</h3>
+                    <div class="poem-content">
+                        <span class="poem-line highlight">The space between words,</span>
+                        <span class="poem-line">When we sit in silence,</span>
+                        <span class="poem-line">Speaks volumes more</span>
+                        <span class="poem-line">Than libraries could hold.</span>
+                    </div>
+                </div>
+                
+                <!-- Poem 6 -->
+                <div class="poem-card interactive-element">
+                    <h3 class="poem-title">Your Hand in Mine</h3>
+                    <div class="poem-content">
+                        <span class="poem-line">Five fingers intertwined,</span>
+                        <span class="poem-line highlight">A perfect fit no sculptor could design,</span>
+                        <span class="poem-line">Proof that some things in this world</span>
+                        <span class="poem-line">Are meant to be joined.</span>
+                    </div>
+                </div>
+                
+                <!-- Hidden Poems 7-25 -->
+                <div class="hidden-poem" id="hiddenPoems">
+                    <!-- Poem 7 -->
+                    <div class="poem-card interactive-element">
+                        <h3 class="poem-title">The Bethan Effect</h3>
+                        <div class="poem-content">
+                            <span class="poem-line">Flowers turn their faces,</span>
+                            <span class="poem-line">Birds pause their song,</span>
+                            <span class="poem-line highlight">The world holds its breath</span>
+                            <span class="poem-line">When you walk along.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Poem 8 -->
+                    <div class="poem-card interactive-element">
+                        <h3 class="poem-title">Your Name</h3>
+                        <div class="poem-content">
+                            <span class="poem-line">Six letters I trace in the air,</span>
+                            <span class="poem-line highlight">A melody my heart repeats,</span>
+                            <span class="poem-line">The sweetest word my lips form,</span>
+                            <span class="poem-line">The rhythm of my heartbeat.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Continue with poems 9-24 -->
+                    <!-- Poem 25 -->
+                    <div class="poem-card interactive-element">
+                        <h3 class="poem-title">Simply You</h3>
+                        <div class="poem-content">
+                            <span class="poem-line">Not for any single quality,</span>
+                            <span class="poem-line highlight">But the miracle of your whole,</span>
+                            <span class="poem-line">The way my soul recognizes yours,</span>
+                            <span class="poem-line">And whispers, "There's my home."</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn" id="showMorePoemsBtn">Reveal More Constellations</button>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section id="rsvp" class="celestial-section">
+            <h2 class="section-title">Our Celestial RSVP</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--moonlight);">Let the stars know you'll be there</p>
+            
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div class="invitation-scroll">
+                    <p class="invitation-text">If kisses were stars,</p>
+                    <p class="invitation-text highlight">I'd give you the galaxy.</p>
+                    <p class="invitation-text">Until then, let me know</p>
+                    <p class="invitation-text">you'll save me this dance.</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <textarea 
+                            id="rsvpMessage" 
+                            placeholder="Write your response here (optional)" 
+                            style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid var(--rose-quartz); border-radius: 5px; color: white; min-height: 100px; font-family: inherit;"></textarea>
+                    </div>
+                    
+                    <div class="response-buttons">
+                        <button class="btn response-btn yes" id="formalYesBtn">Absolutely Yes!</button>
+                        <button class="btn response-btn no" id="formalNoBtn">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Created with stardust and love</p>
+            <p style="margin-top: 0.5rem;"><small>For Bethan - the brightest star in my sky</small></p>
+        </footer>
+    </div>
+
+    <!-- Cursor Hearts -->
+    <div id="cursorHearts"></div>
+
+    <!-- Confetti Container -->
+    <div id="confettiContainer"></div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ======================
+            // INITIAL SETUP
+            // ======================
+            
+            // Create stars
+            const starsContainer = document.querySelector('.stars');
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.width = `${Math.random() * 3 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.setProperty('--duration', `${Math.random() * 5 + 3}s`);
+                star.style.setProperty('--opacity', Math.random() * 0.7 + 0.3);
+                star.style.animationDelay = `${Math.random() * 10}s`;
+                starsContainer.appendChild(star);
+            }
+            
+            // Create shooting stars
+            function createShootingStar() {
+                const shootingStar = document.createElement('div');
+                shootingStar.classList.add('shooting-star');
+                shootingStar.style.left = `${Math.random() * 20}%`;
+                shootingStar.style.top = `${Math.random() * 20}%`;
+                shootingStar.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                document.querySelector('.universe').appendChild(shootingStar);
+                
+                setTimeout(() => {
+                    shootingStar.remove();
+                }, 3000);
+            }
+            
+            setInterval(createShootingStar, 3000);
+            
+            // Create floating love notes
+            for (let i = 0; i < 15; i++) {
+                const loveNote = document.createElement('div');
+                loveNote.classList.add('love-note');
+                loveNote.style.left = `${Math.random() * 100}%`;
+                loveNote.style.top = `${Math.random() * 100 + 100}%`;
+                loveNote.style.animationDuration = `${Math.random() * 15 + 10}s`;
+                loveNote.style.opacity = Math.random() * 0.5;
+                loveNote.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.5})`;
+                document.querySelector('.universe').appendChild(loveNote);
+            }
+            
+            // ======================
+            // PASSWORD PROTECTION
+            // ======================
+            
+            const passwordModal = document.getElementById('passwordModal');
+            const passwordInput = document.getElementById('passwordInput');
+            const unlockBtn = document.getElementById('unlockBtn');
+            const mainContent = document.getElementById('mainContent');
+            
+            // Replace with your actual first date location
+            const correctPassword = "café rouge"; // Example
+            
+            unlockBtn.addEventListener('click', function() {
+                if (passwordInput.value.toLowerCase() === correctPassword.toLowerCase()) {
+                    passwordModal.style.animation = 'fadeOut 1s forwards';
+                    setTimeout(() => {
+                        passwordModal.style.display = 'none';
+                        mainContent.style.display = 'block';
+                        
+                        // Start background music
+                        const bgMusic = document.getElementById('bgMusic');
+                        bgMusic.volume = 0.3;
+                        bgMusic.play();
+                        
+                        // Create initial confetti
+                        createConfetti(50);
+                    }, 1000);
+                } else {
+                    passwordInput.style.borderBottom = '2px solid var(--sunset)';
+                    setTimeout(() => {
+                        passwordInput.style.borderBottom = '2px solid var(--rose-quartz)';
+                    }, 1000);
+                }
+            });
+            
+            // Allow pressing Enter to submit
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    unlockBtn.click();
+                }
+            });
+            
+            // ======================
+            // CAROUSEL FUNCTIONALITY
+            // ======================
+            
+            const carouselTrack = document.getElementById('carouselTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const carouselNav = document.getElementById('carouselNav');
+            const slides = document.querySelectorAll('.memory-slide');
+            let currentSlide = 0;
+            
+            // Create navigation dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                carouselNav.appendChild(dot);
+            });
+            
+            function goToSlide(index) {
+                carouselTrack.style.transform = `translateX(-${index * 100}%)`;
+                currentSlide = index;
+                updateDots();
+            }
+            
+            function updateDots() {
+                document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                goToSlide(currentSlide);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                goToSlide(currentSlide);
+            });
+            
+            // Auto-advance carousel
+            let carouselInterval = setInterval(() => {
+                nextBtn.click();
+            }, 5000);
+            
+            // Pause on hover
+            carouselTrack.addEventListener('mouseenter', () => {
+                clearInterval(carouselInterval);
+            });
+            
+            carouselTrack.addEventListener('mouseleave', () => {
+                carouselInterval = setInterval(() => {
+                    nextBtn.click();
+                }, 5000);
+            });
+            
+            // ======================
+            // INVITATION INTERACTIONS
+            // ======================
+            
+            const waxSeal = document.getElementById('waxSeal');
+            const revealBtn = document.getElementById('revealBtn');
+            const formalInvitation = document.getElementById('formalInvitation');
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const response = document.getElementById('response');
+            
+            // Wax seal reveal
+            waxSeal.addEventListener('click', function() {
+                waxSeal.style.animation = 'heartbeat 1s';
+                setTimeout(() => {
+                    waxSeal.style.animation = '';
+                }, 1000);
+                
+                revealBtn.click();
+            });
+            
+            // Reveal formal invitation
+            revealBtn.addEventListener('click', function() {
+                revealBtn.classList.add('hidden');
+                setTimeout(() => {
+                    revealBtn.style.display = 'none';
+                    formalInvitation.style.display = 'block';
+                    setTimeout(() => {
+                        formalInvitation.style.opacity = '1';
+                        formalInvitation.style.transform = 'translateY(0)';
+                    }, 10);
+                    
+                    // Create floating hearts
+                    createFloatingHearts(20);
+                }, 500);
+            });
+            
+            // Yes button
+            yesBtn.addEventListener('click', function() {
+                formalInvitation.classList.add('hidden');
+                setTimeout(() => {
+                    formalInvitation.style.display = 'none';
+                    response.style.display = 'block';
+                    setTimeout(() => {
+                        response.style.opacity = '1';
+                        response.style.transform = 'translateY(0)';
+                    }, 10);
+                    
+                    // Create confetti celebration
+                    createConfetti(200);
+                    
+                    // Special animation
+                    response.querySelector('div').style.animation = 'glow 2s infinite alternate';
+                }, 500);
+            });
+            
+            // No button (playful)
+            noBtn.addEventListener('mouseover', function() {
+                const btnRect = noBtn.getBoundingClientRect();
+                noBtn.style.position = 'absolute';
+                noBtn.style.left = `${Math.random() * (window.innerWidth - btnRect.width)}px`;
+                noBtn.style.top = `${Math.random() * (window.innerHeight - btnRect.height)}px`;
+            });
+            
+            noBtn.addEventListener('click', function() {
+                noBtn.textContent = "Just kidding! Of course I will!";
+                yesBtn.click();
+            });
+            
+            // ======================
+            // POETRY SECTION
+            // ======================
+            
+            const showMorePoemsBtn = document.getElementById('showMorePoemsBtn');
+            const hiddenPoems = document.getElementById('hiddenPoems');
+            
+            showMorePoemsBtn.addEventListener('click', function() {
+                hiddenPoems.classList.add('revealed');
+                showMorePoemsBtn.classList.add('hidden');
+                setTimeout(() => {
+                    showMorePoemsBtn.style.display = 'none';
+                }, 500);
+                
+                // Animate poem cards
+                document.querySelectorAll('.hidden-poem .poem-card').forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.animation = 'fadeIn 1s forwards';
+                    }, index * 100);
+                });
+            });
+            
+            // ======================
+            // RSVP SECTION
+            // ======================
+            
+            const formalYesBtn = document.getElementById('formalYesBtn');
+            const formalNoBtn = document.getElementById('formalNoBtn');
+            
+            formalYesBtn.addEventListener('click', function() {
+                const message = document.getElementById('rsvpMessage').value;
+                alert(`Thank you! ${message ? "I love your message!" : "I'm so excited!"}\n\nGet ready for a magical evening!`);
+                createConfetti(100);
+            });
+            
+            formalNoBtn.addEventListener('mouseover', function() {
+                const btnRect = formalNoBtn.getBoundingClientRect();
+                formalNoBtn.style.position = 'absolute';
+                formalNoBtn.style.left = `${Math.random() * (window.innerWidth - btnRect.width)}px`;
+                formalNoBtn.style.top = `${Math.random() * (window.innerHeight - btnRect.height)}px`;
+            });
+            
+            // ======================
+            // AR EXPERIENCE
+            // ======================
+            
+            const arButton = document.getElementById('arButton');
+            const arOverlay = document.getElementById('arOverlay');
+            const closeAr = document.getElementById('closeAr');
+            
+            arButton.addEventListener('click', function() {
+                arOverlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeAr.addEventListener('click', function() {
+                arOverlay.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+            
+            // ======================
+            // AUDIO PLAYER
+            // ======================
+            
+            const audioPlayer = document.getElementById('audioPlayer');
+            const bgMusic = document.getElementById('bgMusic');
+            
+            audioPlayer.addEventListener('click', function() {
+                if (bgMusic.paused) {
+                    bgMusic.play();
+                    audioPlayer.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    bgMusic.pause();
+                    audioPlayer.innerHTML = '<i class="fas fa-music"></i>';
+                }
+            });
+            
+            // ======================
+            // NAVIGATION
+            // ======================
+            
+            const starLinks = document.querySelectorAll('.star-link');
+            
+            starLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    starLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Update active nav on scroll
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY + 100;
+                
+                document.querySelectorAll('.celestial-section').forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        starLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('data-section') === sectionId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // ======================
+            // CUSTOM CURSOR
+            // ======================
+            
+            const customCursor = document.getElementById('customCursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                customCursor.style.left = e.clientX + 'px';
+                customCursor.style.top = e.clientY + 'px';
+            });
+            
+            document.querySelectorAll('button, a, .interactive-element').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    customCursor.classList.add('active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    customCursor.classList.remove('active');
+                });
+            });
+            
+            // ======================
+            // SPECIAL EFFECTS
+            // ======================
+            
+            function createFloatingHearts(count) {
+                for (let i = 0; i < count; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('love-note');
+                    heart.style.left = `${Math.random() * 100}%`;
+                    heart.style.top = `${Math.random() * 100 + 100}%`;
+                    heart.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                    heart.style.opacity = Math.random() * 0.5 + 0.3;
+                    heart.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.7 + 0.3})`;
+                    document.querySelector('.universe').appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 15000);
+                }
+            }
+            
+            function createConfetti(count) {
+                const colors = ['var(--rose-quartz)', 'var(--golden-hour)', 'var(--moonlight)', 'var(--sunset)'];
+                const confettiContainer = document.getElementById('confettiContainer');
+                
+                for (let i = 0; i < count; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.top = `${Math.random() * 100}%`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = `${Math.random() * 10 + 5}px`;
+                    confetti.style.borderRadius = `${Math.random() * 50}%`;
+                    confettiContainer.appendChild(confetti);
+                    
+                    // Animate
+                    const angle = Math.random() * Math.PI * 2;
+                    let rotation = Math.random() * 360;
+                    const rotationSpeed = Math.random() * 10 - 5;
+                    
+                    let posX = 0;
+                    let posY = 0;
+                    let opacity = 1;
+                    
+                    const animate = () => {
+                        posX += Math.cos(angle) * 0.5;
+                        posY += Math.sin(angle) * 0.5 + 0.7;
+                        rotation += rotationSpeed;
+                        opacity -= 0.01;
+                        
+                        confetti.style.transform = `translate(${posX}px, ${posY}px) rotate(${rotation}deg)`;
+                        confetti.style.opacity = opacity;
+                        
+                        if (opacity > 0) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            confetti.remove();
+                        }
+                    };
+                    
+                    setTimeout(() => {
+                        confetti.style.opacity = '1';
+                        animate();
+                    }, Math.random() * 1000);
+                }
+            }
+            
+            // Create cursor hearts
+            document.addEventListener('click', function(e) {
+                const heart = document.createElement('div');
+                heart.classList.add('cursor-heart');
+                heart.style.left = e.clientX + 'px';
+                heart.style.top = e.clientY + 'px';
+                heart.style.opacity = '1';
+                heart.style.transform = 'translate(-50%, -50%) scale(1)';
+                document.getElementById('cursorHearts').appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.style.opacity = '0';
+                    heart.style.transform = 'translate(-50%, -50%) scale(3)';
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 300);
+                }, 100);
+            });
+            
+            // Initial animations
+            setTimeout(() => {
+                createFloatingHearts(10);
+            }, 2000);
+            
+            // ======================
+            // FINAL TOUCHES
+            // ======================
+            
+            // Add sparkle effects to interactive elements
+            document.querySelectorAll('.interactive-element').forEach(el => {
+                el.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const sparkle = document.createElement('div');
+                    sparkle.classList.add('sparkle');
+                    sparkle.style.left = x + 'px';
+                    sparkle.style.top = y + 'px';
+                    this.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 1000);
+                });
+            });
+            
+            // Add micro-interactions to all buttons
+            document.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('mousedown', () => {
+                    btn.style.transform = 'translateY(2px)';
+                });
+                btn.addEventListener('mouseup', () => {
+                    btn.style.transform = 'translateY(0)';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
