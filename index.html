@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bethan's Summer Ball Invitation</title>
     <style>
-        /* ===== ORIGINAL STYLES ===== */
         :root {
             --primary-pink: #ffb6c1;
             --light-pink: #ffdfe6;
@@ -29,7 +28,7 @@
             line-height: 1.6;
         }
 
-        /* ===== NEW PASSWORD GATE & ANIMATIONS ===== */
+        /* Password Gate Styles */
         .password-gate {
             position: fixed;
             top: 0;
@@ -65,41 +64,75 @@
             text-align: center;
         }
 
+        /* Petal Styles (in front of content) */
         .petal {
-            position: absolute;
+            position: fixed;
             background-color: #ffb6c1;
             border-radius: 50% 0 50% 50%;
             pointer-events: none;
-            z-index: -1;
+            z-index: 999;
             opacity: 0.7;
         }
 
-        .heart-x {
-            position: fixed;
-            font-size: 30px;
-            color: #ff69b4;
-            pointer-events: none;
-            z-index: -1;
-            animation: float 5s ease-in-out infinite;
+        /* Heart Construction Animation */
+        .heart-construction {
+            margin: 50px auto;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            z-index: 1;
         }
 
-        @keyframes heartFloat {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        .heart-piece {
+            position: absolute;
+            background-color: #ff69b4;
+            opacity: 0;
         }
 
-        .falling-heart {
-            animation: heartFloat 8s linear forwards;
+        .piece-1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px 150px 0 0;
+            transform: rotate(-45deg);
+            top: 60px;
+            left: 30px;
+            animation: fadeInPiece 1s forwards 1s, pulse 2s infinite 2s;
         }
 
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
+        .piece-2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px 150px 0 0;
+            transform: rotate(45deg);
+            top: 60px;
+            left: 120px;
+            animation: fadeInPiece 1s forwards 2s, pulse 2s infinite 3s;
         }
 
-        /* ===== REST OF ORIGINAL CSS ===== */ 
+        .piece-3 {
+            width: 30px;
+            height: 30px;
+            background-color: #ff69b4;
+            transform: rotate(45deg);
+            top: 195px;
+            left: 135px;
+            animation: fadeInPiece 1s forwards 3s, pulse 2s infinite 4s;
+        }
+
+        @keyframes fadeInPiece {
+            to { opacity: 1; }
+        }
+
+        .construction-text {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: var(--text-color);
+            opacity: 0;
+            animation: fadeIn 1s forwards 4s;
+        }
+
+        /* Original Styles */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -526,6 +559,31 @@
             .song-title {
                 max-width: 150px;
             }
+
+            .heart-construction {
+                width: 200px;
+                height: 200px;
+            }
+
+            .piece-1, .piece-2 {
+                width: 100px;
+                height: 100px;
+            }
+
+            .piece-1 {
+                top: 40px;
+                left: 20px;
+            }
+
+            .piece-2 {
+                top: 40px;
+                left: 80px;
+            }
+
+            .piece-3 {
+                top: 130px;
+                left: 90px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -552,6 +610,15 @@
                 width: calc(100% - 20px);
                 right: 10px;
                 justify-content: center;
+            }
+
+            .password-box {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .password-input {
+                font-size: 1rem;
             }
         }
 
@@ -860,7 +927,7 @@
     </style>
 </head>
 <body>
-    <!-- Password Gate (NEW) -->
+    <!-- Password Gate -->
     <div class="password-gate" id="password-gate">
         <div class="password-box">
             <h2>❤ For Bethan's Eyes Only ❤</h2>
@@ -1333,6 +1400,16 @@
                 </div>
             </div>
         </section>
+
+        <!-- Heart Construction Animation -->
+        <section id="heart-construction">
+            <div class="heart-construction">
+                <div class="heart-piece piece-1"></div>
+                <div class="heart-piece piece-2"></div>
+                <div class="heart-piece piece-3"></div>
+            </div>
+            <p class="construction-text">Built with love, just for you</p>
+        </section>
     </div>
 
     <!-- Footer -->
@@ -1342,7 +1419,7 @@
     </footer>
 
     <script>
-        // ===== NEW PASSWORD PROTECTION =====
+        // Password Protection
         const passwordGate = document.getElementById('password-gate');
         const passwordInput = document.getElementById('password-input');
         const submitPassword = document.getElementById('submit-password');
@@ -1378,7 +1455,7 @@
             }
         });
 
-        // ===== ENHANCED HEART ANIMATIONS =====
+        // Enhanced Heart Animation System
         function createHearts() {
             // Big floating hearts
             for (let i = 0; i < 15; i++) {
@@ -1408,7 +1485,7 @@
             }, 300);
         }
 
-        // ===== ROSE PETAL EFFECT =====
+        // Rose Petal Effect (now in front of content)
         function startPetals() {
             function createPetal() {
                 const petal = document.createElement('div');
@@ -1422,10 +1499,23 @@
                 const pinkShade = Math.floor(Math.random() * 55 + 200);
                 petal.style.backgroundColor = `rgb(255, ${pinkShade - 40}, ${pinkShade})`;
                 document.body.appendChild(petal);
+                
                 setTimeout(() => {
                     petal.remove();
                 }, 5000);
             }
+
+            // Create falling animation
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
 
             // Initial petals
             for (let i = 0; i < 30; i++) {
@@ -1440,7 +1530,7 @@
             }, 500);
         }
 
-        // ===== ORIGINAL JAVASCRIPT =====
+        // Original JavaScript
         function updateCounter() {
             const startDate = new Date('2024-01-03T00:00:00');
             const now = new Date();
