@@ -1532,19 +1532,22 @@
 
         // Original JavaScript
         function updateCounter() {
-            const startDate = new Date('2025-01-03T00:00:00');
-            const now = new Date();
-            const diff = now - startDate;
-            
-            const seconds = Math.floor(diff / 1000);
-            const minutes = Math.floor(seconds / 60);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-            
-            document.getElementById('days-together').textContent = days;
-            document.getElementById('hours-together').textContent = hours % 24;
-            document.getElementById('minutes-together').textContent = minutes % 60;
-            document.getElementById('seconds-together').textContent = seconds % 60;
+    const startDate = new Date('2025-01-03T00:00:00'); // Verify this line is correct
+    const now = new Date();
+    const diff = now - startDate; // This should be negative until Jan 3 2025
+    
+    const seconds = Math.floor(Math.abs(diff) / 1000); // Added Math.abs()
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    
+    // Update display (added ternary for countdown/countup)
+    document.getElementById('days-together').textContent = 
+        diff < 0 ? `-${days}` : days;
+    document.getElementById('hours-together').textContent = hours % 24;
+    document.getElementById('minutes-together').textContent = minutes % 60;
+    document.getElementById('seconds-together').textContent = seconds % 60;
+}
         }
         
         setInterval(updateCounter, 1000);
