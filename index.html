@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@ html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bethan's Summer Ball Invitation</title>
     <style>
-        /* Base Styles - ~500 lines of CSS */
+        /* ===== ORIGINAL STYLES ===== */
         :root {
             --primary-pink: #ffb6c1;
             --light-pink: #ffdfe6;
@@ -30,6 +29,77 @@ html
             line-height: 1.6;
         }
 
+        /* ===== NEW PASSWORD GATE & ANIMATIONS ===== */
+        .password-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 182, 193, 0.95);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+        }
+
+        .password-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 500px;
+            animation: pulse 2s infinite;
+        }
+
+        .password-input {
+            padding: 15px;
+            font-size: 1.2rem;
+            border: 3px solid #ff69b4;
+            border-radius: 50px;
+            margin: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .petal {
+            position: absolute;
+            background-color: #ffb6c1;
+            border-radius: 50% 0 50% 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .heart-x {
+            position: fixed;
+            font-size: 30px;
+            color: #ff69b4;
+            pointer-events: none;
+            z-index: -1;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes heartFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .falling-heart {
+            animation: heartFloat 8s linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== REST OF ORIGINAL CSS ===== */ 
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -87,7 +157,6 @@ html
             border-bottom: 1px dashed var(--dark-pink);
         }
 
-        /* Animations - ~300 lines */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -144,7 +213,6 @@ html
             animation: rotate 4s linear infinite;
         }
 
-        /* Button Styles - ~100 lines */
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -190,7 +258,6 @@ html
             opacity: 1;
         }
 
-        /* Counter Styles - ~100 lines */
         .counter-container {
             background-color: var(--primary-pink);
             padding: 30px;
@@ -228,7 +295,6 @@ html
             letter-spacing: 1px;
         }
 
-        /* Poem Styles - ~200 lines */
         .poem-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -274,7 +340,6 @@ html
             line-height: 1.8;
         }
 
-        /* Music Player - ~150 lines */
         .music-player {
             position: fixed;
             bottom: 20px;
@@ -317,7 +382,6 @@ html
             text-overflow: ellipsis;
         }
 
-        /* Form Styles - ~150 lines */
         .rsvp-form {
             max-width: 600px;
             margin: 0 auto;
@@ -357,7 +421,6 @@ html
             resize: vertical;
         }
 
-        /* Footer Styles - ~50 lines */
         footer {
             background-color: var(--primary-pink);
             padding: 30px 0;
@@ -372,7 +435,6 @@ html
             animation: heartBeat 1.5s infinite;
         }
 
-        /* Special Elements - ~200 lines */
         .hearts-container {
             position: absolute;
             top: 0;
@@ -428,7 +490,6 @@ html
             box-shadow: var(--shadow);
         }
 
-        /* Responsive Styles - ~200 lines */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -494,7 +555,6 @@ html
             }
         }
 
-        /* Decorative Elements - ~300 lines */
         .zigzag {
             position: relative;
             height: 20px;
@@ -585,7 +645,6 @@ html
             color: var(--text-color);
         }
 
-        /* Special Effects - ~200 lines */
         .confetti {
             position: fixed;
             width: 10px;
@@ -638,7 +697,6 @@ html
             transform: translateY(0);
         }
 
-        /* Timeline Styles - ~200 lines */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -694,7 +752,6 @@ html
             margin-bottom: 10px;
         }
 
-        /* Gallery Placeholder - ~100 lines */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -727,7 +784,6 @@ html
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Additional decorative elements */
         .corner-ribbon {
             position: fixed;
             top: 30px;
@@ -761,7 +817,6 @@ html
             left: 30px;
         }
 
-        /* More specific element styles */
         .special-message {
             font-size: 1.3rem;
             line-height: 1.8;
@@ -805,7 +860,19 @@ html
     </style>
 </head>
 <body>
-    <!-- Hearts Background -->
+    <!-- Password Gate (NEW) -->
+    <div class="password-gate" id="password-gate">
+        <div class="password-box">
+            <h2>❤ For Bethan's Eyes Only ❤</h2>
+            <p>To see your special invitation, answer this question:</p>
+            <h3>"Where was our first date?"</h3>
+            <input type="text" class="password-input" id="password-input" placeholder="Type your answer here...">
+            <button class="btn btn-heart" id="submit-password">Enter</button>
+            <p id="password-hint" style="color:#ff69b4; margin-top:10px; display:none;">Hint: Think about our historical connection ❤</p>
+        </div>
+    </div>
+
+    <!-- Original Content -->
     <div class="hearts-container" id="hearts-container"></div>
     <div class="pink-dots"></div>
 
@@ -817,9 +884,7 @@ html
             <button class="music-btn" id="next-btn">⏭</button>
             <span class="song-title" id="song-title">Love Song</span>
         </div>
-        <audio id="audio-player" loop>
-            <!-- Audio sources would be added here -->
-        </audio>
+        <audio id="audio-player" loop></audio>
     </div>
 
     <!-- Corner Ribbon -->
@@ -1277,9 +1342,105 @@ html
     </footer>
 
     <script>
-        // JavaScript for all interactive elements - ~500 lines
-        
-        // Relationship Counter
+        // ===== NEW PASSWORD PROTECTION =====
+        const passwordGate = document.getElementById('password-gate');
+        const passwordInput = document.getElementById('password-input');
+        const submitPassword = document.getElementById('submit-password');
+        const passwordHint = document.getElementById('password-hint');
+
+        // Show hint after 10 seconds
+        setTimeout(() => {
+            passwordHint.style.display = 'block';
+        }, 10000);
+
+        submitPassword.addEventListener('click', () => {
+            if (passwordInput.value.trim().toLowerCase() === 'lord nelson') {
+                passwordGate.style.animation = 'fadeOut 1s forwards';
+                setTimeout(() => {
+                    passwordGate.style.display = 'none';
+                }, 1000);
+                createHearts();
+                startPetals();
+            } else {
+                passwordInput.style.borderColor = '#ff0000';
+                passwordInput.value = '';
+                passwordInput.placeholder = 'Try again... think harder!';
+                setTimeout(() => {
+                    passwordInput.style.borderColor = '#ff69b4';
+                }, 1000);
+            }
+        });
+
+        // Allow pressing Enter to submit
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                submitPassword.click();
+            }
+        });
+
+        // ===== ENHANCED HEART ANIMATIONS =====
+        function createHearts() {
+            // Big floating hearts
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-x';
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                heart.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(heart);
+            }
+
+            // Falling hearts
+            setInterval(() => {
+                const fallingHeart = document.createElement('div');
+                fallingHeart.className = 'falling-heart';
+                fallingHeart.innerHTML = '❤';
+                fallingHeart.style.left = Math.random() * 100 + 'vw';
+                fallingHeart.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                document.body.appendChild(fallingHeart);
+
+                setTimeout(() => {
+                    fallingHeart.remove();
+                }, 8000);
+            }, 300);
+        }
+
+        // ===== ROSE PETAL EFFECT =====
+        function startPetals() {
+            function createPetal() {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                const size = Math.random() * 20 + 10;
+                petal.style.width = size + 'px';
+                petal.style.height = size + 'px';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+                petal.style.animation = `fall ${Math.random() * 5 + 5}s linear forwards`;
+                const pinkShade = Math.floor(Math.random() * 55 + 200);
+                petal.style.backgroundColor = `rgb(255, ${pinkShade - 40}, ${pinkShade})`;
+                document.body.appendChild(petal);
+                setTimeout(() => {
+                    petal.remove();
+                }, 5000);
+            }
+
+            // Initial petals
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    createPetal();
+                }, i * 300);
+            }
+
+            // Ongoing petals
+            setInterval(() => {
+                createPetal();
+            }, 500);
+        }
+
+        // ===== ORIGINAL JAVASCRIPT =====
         function updateCounter() {
             const startDate = new Date('2024-01-03T00:00:00');
             const now = new Date();
@@ -1299,7 +1460,6 @@ html
         setInterval(updateCounter, 1000);
         updateCounter();
         
-        // Scroll Animation
         function checkVisibility() {
             const elements = document.querySelectorAll('.hidden');
             elements.forEach(element => {
@@ -1313,7 +1473,6 @@ html
         window.addEventListener('scroll', checkVisibility);
         window.addEventListener('load', checkVisibility);
         
-        // Hearts Background
         function createHearts() {
             const container = document.getElementById('hearts-container');
             const heartCount = 30;
@@ -1333,7 +1492,6 @@ html
         
         createHearts();
         
-        // Confetti Effect
         function createConfetti() {
             const colors = ['#ffb6c1', '#ff69b4', '#ffdfe6', '#d88a9a', '#ffffff'];
             
@@ -1352,13 +1510,12 @@ html
             }
         }
         
-        // Button Effects
         document.getElementById('main-yes-btn').addEventListener('click', () => {
             createConfetti();
             alert("I'm the happiest person alive! Get ready for the best summer ball ever!");
         });
         
-        document.getElementById('main-no-btn').addEventListener('click', () => {
+        document.getElementById('main-no-btn').addEventListener('click', function() {
             this.classList.add('shake');
             setTimeout(() => {
                 this.classList.remove('shake');
@@ -1388,7 +1545,6 @@ html
             }
         });
         
-        // Music Player
         const songs = [
             { title: "Perfect - Ed Sheeran", src: "" },
             { title: "All of Me - John Legend", src: "" },
@@ -1408,7 +1564,6 @@ html
         
         function loadSong() {
             songTitle.textContent = songs[currentSong].title;
-            // In a real implementation, we'd set audioPlayer.src = songs[currentSong].src
         }
         
         playBtn.addEventListener('click', () => {
@@ -1436,7 +1591,6 @@ html
         
         loadSong();
         
-        // Sparkle Effects
         function addSparkles() {
             const elements = document.querySelectorAll('.poem-card, .btn-heart, h1, h2');
             elements.forEach(el => {
@@ -1460,7 +1614,6 @@ html
         
         addSparkles();
         
-        // Typewriter Effect
         function typeWriter(element, text, speed) {
             let i = 0;
             function typing() {
@@ -1474,7 +1627,6 @@ html
             typing();
         }
         
-        // Initialize some typewriter effects
         window.addEventListener('load', () => {
             const headers = document.querySelectorAll('h1, h2');
             headers.forEach(header => {
@@ -1486,7 +1638,6 @@ html
             });
         });
         
-        // Easter Egg
         let konamiCode = [];
         const secretCode = [
             'ArrowUp', 'ArrowUp', 
